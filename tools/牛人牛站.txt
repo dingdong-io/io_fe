@@ -1,0 +1,39 @@
+一/工具站
+
+
+谷歌
+百度
+w3c(推荐http://www.runoob.com/,站内使用百度搜索,另有 http://www.w3school.com.cn/)
+
+Can I use http://caniuse.com/ 查浏览器支持的情况 当不知道所写的能否被目标浏览器支持时
+
+二/视频学习网站
+慕课 
+http://www.imooc.com 
+	其中http://www.imooc.com/learn/9 是前端教材中的经典,快速到位
+
+极客学院 
+http://www.jikexueyuan.com/
+	在各大视频站中,其最鲜明特色是跟进最新最火的技术
+
+李炎恢老师的全套web教程 http://www.ycku.com/course/
+	授课质量较高,内容全面,值得尊重.
+
+
+三/牛人站
+张鑫旭 好专研,文风幽默深入
+http://www.zhangxinxu.com/wordpress/
+
+阮一峰
+http://www.ruanyifeng.com/blog/
+
+
+
+
+
+
+
+
+
+
+
