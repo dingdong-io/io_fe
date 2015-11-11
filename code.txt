@@ -1,0 +1,65 @@
+第一部分 html
+
+
+第一部分 css
+
+
+第一部分 js
+1/获取元素位置
+参http://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html
+  容易想到的方法是offsetTop,但是js的原生dom对象有个方法getBoundingClientRect(),返回一个对象，其中包含了left、right、top、bottom、width、height属性,关键是,主流浏览器基本都支持.
+元素的相对位置(与视口原点相对)就是
+　　var X= this.getBoundingClientRect().left;
+　　var Y =this.getBoundingClientRect().top
+
+再加上滚动距离，就可以得到绝对位置
+　　var X= this.getBoundingClientRect().left+document.documentElement.scrollLeft;
+
+　　var Y =this.getBoundingClientRect().top+document.documentElement.scrollTop;
+　　
+2/判断滚动停止
+把事件绑定在onscorll上是很恐怖的一件事,鼠标滚一下将触发浏览器成百上千次的行为,所以需要判断滚动停止.
+
+var delay = 300;//判定间隔时间
+var topValue = 0, // 上次滚动条到顶部的距离
+    interval = null; // 定时器
+window.onscroll = function () {
+    if (interval == null)
+        interval = setInterval(test, delay); 
+}
+
+function test() {
+    var _tempTop = document.body.scrollTop||document.documentElement.scrollTop//兼容性
+    // 判断此刻到顶部的距离是否和之前的距离相等
+    if (_tempTop == topValue) {
+        clearInterval(interval);
+        interval = null;
+        //此处停止,dosomething
+        //console.log(_tempTop)
+    }
+    topValue = _tempTop;
+}
+
+
+第四部分 综合
+1/判断IE
+1;js实现
+var IETester = function(userAgent){
+    var UA =  userAgent || navigator.userAgent;
+    if(/msie/i.test(UA)){
+        return UA.match(/msie (\d+\.\d+)/i)[1];
+    }else if(~UA.toLowerCase().indexOf('trident') && ~UA.indexOf('rv')){
+        return UA.match(/rv:(\d+\.\d+)/)[1];
+    }
+    return false;
+}
+var isIE = IETester()
+
+IETester的返回值是版本号,非ie时返false
+虽然有更简洁的ie判断,但有的不包含IE11之后,也有的需要服务器环境来支持.
+
+2;html中hack实现
+
+
+
+
