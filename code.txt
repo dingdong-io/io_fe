@@ -1,49 +1,49 @@
-µÚÒ»²¿·Ö html
+ç¬¬ä¸€éƒ¨åˆ† html
 
 
-µÚÒ»²¿·Ö css
+ç¬¬ä¸€éƒ¨åˆ† css
 
 
-µÚÒ»²¿·Ö js
-1/»ñÈ¡ÔªËØÎ»ÖÃ
-²Îhttp://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html
-  ÈİÒ×Ïëµ½µÄ·½·¨ÊÇoffsetTop,µ«ÊÇjsµÄÔ­Éúdom¶ÔÏóÓĞ¸ö·½·¨getBoundingClientRect(),·µ»ØÒ»¸ö¶ÔÏó£¬ÆäÖĞ°üº¬ÁËleft¡¢right¡¢top¡¢bottom¡¢width¡¢heightÊôĞÔ,¹Ø¼üÊÇ,Ö÷Á÷ä¯ÀÀÆ÷»ù±¾¶¼Ö§³Ö.
-ÔªËØµÄÏà¶ÔÎ»ÖÃ(ÓëÊÓ¿ÚÔ­µãÏà¶Ô)¾ÍÊÇ
-¡¡¡¡var X= this.getBoundingClientRect().left;
-¡¡¡¡var Y =this.getBoundingClientRect().top
+ç¬¬ä¸€éƒ¨åˆ† js
+1/è·å–å…ƒç´ ä½ç½®
+å‚http://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html
+  å®¹æ˜“æƒ³åˆ°çš„æ–¹æ³•æ˜¯offsetTop,ä½†æ˜¯jsçš„åŸç”Ÿdomå¯¹è±¡æœ‰ä¸ªæ–¹æ³•getBoundingClientRect(),è¿”å›ä¸€ä¸ªå¯¹è±¡ï¼Œå…¶ä¸­åŒ…å«äº†leftã€rightã€topã€bottomã€widthã€heightå±æ€§,å…³é”®æ˜¯,ä¸»æµæµè§ˆå™¨åŸºæœ¬éƒ½æ”¯æŒ.
+å…ƒç´ çš„ç›¸å¯¹ä½ç½®(ä¸è§†å£åŸç‚¹ç›¸å¯¹)å°±æ˜¯
+ã€€ã€€var X= this.getBoundingClientRect().left;
+ã€€ã€€var Y =this.getBoundingClientRect().top
 
-ÔÙ¼ÓÉÏ¹ö¶¯¾àÀë£¬¾Í¿ÉÒÔµÃµ½¾ø¶ÔÎ»ÖÃ
-¡¡¡¡var X= this.getBoundingClientRect().left+document.documentElement.scrollLeft;
+å†åŠ ä¸Šæ»šåŠ¨è·ç¦»ï¼Œå°±å¯ä»¥å¾—åˆ°ç»å¯¹ä½ç½®
+ã€€ã€€var X= this.getBoundingClientRect().left+document.documentElement.scrollLeft;
 
-¡¡¡¡var Y =this.getBoundingClientRect().top+document.documentElement.scrollTop;
-¡¡¡¡
-2/ÅĞ¶Ï¹ö¶¯Í£Ö¹
-°ÑÊÂ¼ş°ó¶¨ÔÚonscorllÉÏÊÇºÜ¿Ö²ÀµÄÒ»¼şÊÂ,Êó±ê¹öÒ»ÏÂ½«´¥·¢ä¯ÀÀÆ÷³É°ÙÉÏÇ§´ÎµÄĞĞÎª,ËùÒÔĞèÒªÅĞ¶Ï¹ö¶¯Í£Ö¹.
+ã€€ã€€var Y =this.getBoundingClientRect().top+document.documentElement.scrollTop;
+ã€€ã€€
+2/åˆ¤æ–­æ»šåŠ¨åœæ­¢
+æŠŠäº‹ä»¶ç»‘å®šåœ¨onscorllä¸Šæ˜¯å¾ˆææ€–çš„ä¸€ä»¶äº‹,é¼ æ ‡æ»šä¸€ä¸‹å°†è§¦å‘æµè§ˆå™¨æˆç™¾ä¸Šåƒæ¬¡çš„è¡Œä¸º,æ‰€ä»¥éœ€è¦åˆ¤æ–­æ»šåŠ¨åœæ­¢.
 
-var delay = 300;//ÅĞ¶¨¼ä¸ôÊ±¼ä
-var topValue = 0, // ÉÏ´Î¹ö¶¯Ìõµ½¶¥²¿µÄ¾àÀë
-    interval = null; // ¶¨Ê±Æ÷
+var delay = 300;//åˆ¤å®šé—´éš”æ—¶é—´
+var topValue = 0, // ä¸Šæ¬¡æ»šåŠ¨æ¡åˆ°é¡¶éƒ¨çš„è·ç¦»
+    interval = null; // å®šæ—¶å™¨
 window.onscroll = function () {
     if (interval == null)
         interval = setInterval(test, delay); 
 }
 
 function test() {
-    var _tempTop = document.body.scrollTop||document.documentElement.scrollTop//¼æÈİĞÔ
-    // ÅĞ¶Ï´Ë¿Ìµ½¶¥²¿µÄ¾àÀëÊÇ·ñºÍÖ®Ç°µÄ¾àÀëÏàµÈ
+    var _tempTop = document.body.scrollTop||document.documentElement.scrollTop//å…¼å®¹æ€§
+    // åˆ¤æ–­æ­¤åˆ»åˆ°é¡¶éƒ¨çš„è·ç¦»æ˜¯å¦å’Œä¹‹å‰çš„è·ç¦»ç›¸ç­‰
     if (_tempTop == topValue) {
         clearInterval(interval);
         interval = null;
-        //´Ë´¦Í£Ö¹,dosomething
+        //æ­¤å¤„åœæ­¢,dosomething
         //console.log(_tempTop)
     }
     topValue = _tempTop;
 }
 
 
-µÚËÄ²¿·Ö ×ÛºÏ
-1/ÅĞ¶ÏIE
-1;jsÊµÏÖ
+ç¬¬å››éƒ¨åˆ† ç»¼åˆ
+1/åˆ¤æ–­IE
+1;jså®ç°
 var IETester = function(userAgent){
     var UA =  userAgent || navigator.userAgent;
     if(/msie/i.test(UA)){
@@ -55,10 +55,10 @@ var IETester = function(userAgent){
 }
 var isIE = IETester()
 
-IETesterµÄ·µ»ØÖµÊÇ°æ±¾ºÅ,·ÇieÊ±·µfalse
-ËäÈ»ÓĞ¸ü¼ò½àµÄieÅĞ¶Ï,µ«ÓĞµÄ²»°üº¬IE11Ö®ºó,Ò²ÓĞµÄĞèÒª·şÎñÆ÷»·¾³À´Ö§³Ö.
+IETesterçš„è¿”å›å€¼æ˜¯ç‰ˆæœ¬å·,éieæ—¶è¿”false
+è™½ç„¶æœ‰æ›´ç®€æ´çš„ieåˆ¤æ–­,ä½†æœ‰çš„ä¸åŒ…å«IE11ä¹‹å,ä¹Ÿæœ‰çš„éœ€è¦æœåŠ¡å™¨ç¯å¢ƒæ¥æ”¯æŒ.
 
-2;htmlÖĞhackÊµÏÖ
+2;htmlä¸­hackå®ç°
 
 
 
