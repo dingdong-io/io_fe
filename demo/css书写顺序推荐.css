@@ -1,0 +1,68 @@
+@charset="utf-8";
+/*
+A、
+Basic：基础的，最基础的，即使是一些老的浏览器也能很好的支持的样式放在此处，并且从此导入
+Layout：网页布局的，如果你不需要改变布局就不需要更改此文件
+General：常规的，颜色呀，样式呀，这里并不涉及页面布局的样式。也许此文件是你最经常更改的。
+Forms：表单级的，一些表单的布局与样式。表单级的文件可以根据不同的页面有多个。　　my：关系到交互独立出来
+Home：主页的，这里的样式可能会覆盖一些General里面的样式。　　my：HOME区很有用（主页常有变），但推荐配合主页<body id="home">
+Print：用于打印的。
+
+B、
+前面三项,都是针对"框"的,即整体的
+后面设置框内部的,就是与内容相关的.
+
+一、显示属性
+display
+visibility
+list-style
+overflow
+
+
+二、定位属性
+position
+top||right||bottom||left
+float
+clear
+
+三、盒模型
+1、内容区
+width
+height  //特别注意与overflow+position的配合,可能影响到父元素,有时又需要它来影响父元素的高
+
+2、盒
+margin
+padding
+border
+
+
+四、背景
+background
+(background-image、background-position、background-repeat、background-attachment)
+
+
+五、内容属性,文本属性
+两个最常用
+color
+font
+(font-size||font-family||font-weight||font-style||font-variant)
+
+direction	设置文本方向
+vertical-align 元素的垂直对齐方式,常用来图文混排
+
+line-height	设置行高
+
+text-align	对齐方式
+text-indent	缩进元素中文本的首行。
+text-decoration	为文本添加修饰。
+text-transform	字母大小写
+
+letter-spacing	设置字符间距。英文中表现为每个字母间
+word-spacing	设置字间距。英文中表现为单词间
+white-space	设置元素中空白的处理方式。
+
+content	在:before 及 :after 伪类中才使用,插入生成内容
+
+六.其它
+
+*/
